@@ -26,6 +26,9 @@ function listen(target, type, callback) {
     if (is.node(target)) {
         return listenNode(target, type, callback);
     }
+    else if (is.svg(target)) {
+        return listenNode(target, type, callback);
+    }
     else if (is.nodeList(target)) {
         return listenNodeList(target, type, callback);
     }
@@ -33,7 +36,7 @@ function listen(target, type, callback) {
         return listenSelector(target, type, callback);
     }
     else {
-        throw new TypeError('First argument must be a String, HTMLElement, HTMLCollection, or NodeList');
+        throw new TypeError('First argument must be a String, HTMLElement, SVGElement, HTMLCollection, or NodeList');
     }
 }
 

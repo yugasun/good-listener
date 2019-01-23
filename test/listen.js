@@ -29,7 +29,7 @@ describe('good-listener', function() {
                 listen(null, 'click', function() {});
             }
             catch(error) {
-                assert.equal(error.message, 'First argument must be a String, HTMLElement, HTMLCollection, or NodeList');
+                assert.equal(error.message, 'First argument must be a String, HTMLElement, SVGElement, HTMLCollection, or NodeList');
                 done();
             }
         });
